@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author    Marcin Frymark
+ * @email     contact@alekseon.com
+ * @company   Alekseon
+ * @website   www.alekseon.com
+ */
+-->
+<config>
+   <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <alekseon_adminNotification translate="title" module="alekseon_customerComment">
+                                        <title>Alekseon Notifications</title>
+                                        <sort_order>10</sort_order>
+                                    </alekseon_adminNotification>
+                                    <alekseon_customerComment translate="title" module="alekseon_customerComment">
+                                        <title>Customer Comment</title>
+                                        <sort_order>40</sort_order>
+                                    </alekseon_customerComment>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>    
+</config>

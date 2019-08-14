@@ -1,0 +1,21 @@
+<?php
+/**
+ * @author    Marcin Frymark
+ * @email     contact@alekseon.com
+ * @company   Alekseon
+ * @website   www.alekseon.com
+ */
+?>
+<div id="customer_comment_container">
+    <?php echo $this->getChildHtml('customer_comment') ?>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    var customerComment = new CustomerComment(
+        '<?php echo $this->getChild('customer_comment')->getSaveUrl() ?>',
+        '<?php echo $this->getChild('customer_comment')->getDeleteUrl() ?>', 
+        $('customer_comment_container'),
+        '<?php echo $this->__('Are you sure ?') ?>'
+    );
+//]]>
+</script>

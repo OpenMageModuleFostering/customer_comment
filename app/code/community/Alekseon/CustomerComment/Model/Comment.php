@@ -1,0 +1,1 @@
+<?php/** * @author    Marcin Frymark * @email     contact@alekseon.com * @company   Alekseon * @website   www.alekseon.com */class Alekseon_CustomerComment_Model_Comment extends Mage_Core_Model_Abstract{    public function __construct($args = array())    {		$this->_init('alekseon_customerComment/comment');    }}

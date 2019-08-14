@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author    Marcin Frymark
+ * @email     contact@alekseon.com
+ * @company   Alekseon
+ * @website   www.alekseon.com
+ */
+-->
+<layout>
+    <adminhtml_sales_order_view>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/alekseon/customerComment.js</name></action>
+        </reference>    
+        <block type="adminhtml/template" name="customer_comment_container" template="alekseon/customerComment/comment/container.phtml">
+            <block type="alekseon_customerComment/adminhtml_comment" name="customer_comment" template="alekseon/customerComment/comment.phtml"></block>
+        </block>
+    </adminhtml_sales_order_view>
+
+    <adminhtml_customer_edit>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/alekseon/customerComment.js</name></action>
+        </reference>
+        <reference name="customer_edit_tab_view">
+            <block type="adminhtml/template" name="customer_comment_tab" template="alekseon/customerComment/customertab.phtml" before="-">
+                <block type="adminhtml/template" name="customer_comment_container" template="alekseon/customerComment/comment/container.phtml">
+                    <block type="alekseon_customerComment/adminhtml_comment" name="customer_comment" template="alekseon/customerComment/comment.phtml"></block>
+                </block>
+            </block>
+        </reference>
+    </adminhtml_customer_edit>
+
+    <adminhtml_customercomment_save>
+        <block type="alekseon_customerComment/adminhtml_comment" name="customer_comment" template="alekseon/customerComment/comment.phtml"></block>
+    </adminhtml_customercomment_save>
+    
+    <adminhtml_customercomment_delete>
+        <block type="alekseon_customerComment/adminhtml_comment" name="customer_comment" template="alekseon/customerComment/comment.phtml"></block>
+    </adminhtml_customercomment_delete>
+</layout>

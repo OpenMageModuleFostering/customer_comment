@@ -1,0 +1,52 @@
+<?php
+/**
+ * @author    Marcin Frymark
+ * @email     contact@alekseon.com
+ * @company   Alekseon
+ * @website   www.alekseon.com
+ */
+?>
+<?php if (!$this->getCustomerComment()->getId()): ?>
+    <ul>
+        <li id="customer_comment">
+            <button type="button" class="add" onclick="customerComment.editComment()">
+                <span><?php echo $this->__('Add Comment') ?></span>
+            </button>
+        </li>
+    </ul>
+<?php endif ?>
+<ul class="messages">
+    <?php if ($this->getCustomerComment()->getId()): ?>
+        <li id="customer_comment" class="<?php echo $this->getCommentTypeClass() ?>">
+            <?php echo nl2br($this->getCustomerComment()->getComment()) ?>
+            <div id="edit_button">
+                <button type="button" onclick="customerComment.editComment()">
+                    <span><?php echo $this->__('Edit Comment') ?></span>
+                </button>
+            </div>
+        </li>
+    <?php endif ?>
+    <li id="customer_comment_edit" class="<?php echo $this->getCommentTypeClass() ?>" style="display: none">
+        <select name="type" onChange="customerComment.changeCommentType(this)">
+            <?php foreach($this->getCustomerCommentTypes() as $commentId => $commentType): ?>
+                <option value="<?php echo $commentId ?>" typeclass="<?php echo $commentType['class'] ?>" <?php if ($commentId == $this->getCurrentCommentType()) { echo 'selected'; } ?>>
+                    <?php echo $commentType['label'] ?>
+                </option>
+            <?php endforeach ?>
+        </select>
+        <br />
+        <textarea name="comment"><?php echo $this->getCustomerComment()->getComment() ?></textarea>
+        <br />
+        <button type="button" class="back" onclick="customerComment.cancelEdition()">
+            <span><?php echo $this->__('Back') ?></span>
+        </button>
+        <button type="button" class="save" onclick="customerComment.saveComment()">
+            <span><?php echo $this->__('Save') ?></span>
+        </button>
+        <?php if ($this->getCustomerComment()->getId()): ?>
+            <button type="button" class="delete" onclick="customerComment.deleteComment()">
+                <span><?php echo $this->__('Delete') ?></span>
+            </button>
+        <?php endif ?>
+    </li>
+</ul>
