@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/customer_comment",
+    "name": "OpenMageModuleFostering\/customer_comment",
     "type": "magento-module",
     "license": "OSL-v3.0",
     "homepage": "",
     "description": "Add comment to customer.",
     "authors": [
-    {
-        "name": "Marcin Frymark",
-        "email": "contact@alekseon.com"
-    }
-],
+        {
+            "name": "Marcin Frymark",
+            "email": "contact@alekseon.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
